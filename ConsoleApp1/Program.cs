@@ -12,7 +12,7 @@ namespace ConsoleApp1
         private static SamuraiContext _context = new SamuraiContext();
         static void Main(string[] args)
         {
-            RawSqlCommandUpdateSamurai();
+            _context.Database.EnsureCreated();
             QuerrySamurais();
             Console.ReadKey();
         }

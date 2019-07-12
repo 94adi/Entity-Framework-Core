@@ -14,6 +14,8 @@ namespace SamuraiApp.Data
         public DbSet<Battle> Battles { get; set; }
         public DbSet<Quote> Quotes { get; set; }
 
+        public DbSet<SamuraiBattle> SamuraiBattles { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<SamuraiBattle>()
@@ -25,7 +27,7 @@ namespace SamuraiApp.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("" +
-                "Server = (localdb)\\mssqllocaldb; Database = SamuraiData; Trusted_Connection = True; ");
+                "Server = (localdb)\\mssqllocaldb; Database = SamuraiRelatedData; Trusted_Connection = True; ");
             base.OnConfiguring(optionsBuilder);
         }
 
